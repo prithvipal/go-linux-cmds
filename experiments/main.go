@@ -34,7 +34,9 @@ func main() {
 		fmt.Println(entry.Size())
 
 		//Getting last modified
-		fmt.Println(entry.ModTime())
+		//t := time.Now()
+		//fmt.Println(t.Format("Apr _2 15:04"))
+		fmt.Println(entry.ModTime().Format("Apr _2 15:04"))
 
 		//Getting file name
 		fmt.Println(entry.Name())
