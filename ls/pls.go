@@ -20,7 +20,7 @@ type lsStat struct {
 
 func (s *lsStat) print() {
 	//fmt.Println("What is this?")
-	fmt.Printf("%v %v %v %v %v %v %v\n", s.mode, s.nLink, s.username, s.groupname, s.size, s.lastModified, s.name)
+	fmt.Printf("%v %2v %v %v %4v %v %v\n", s.mode, s.nLink, s.username, s.groupname, s.size, s.lastModified, s.name)
 }
 
 func getStats(entries []os.FileInfo) []lsStat {
@@ -39,7 +39,7 @@ func getStats(entries []os.FileInfo) []lsStat {
 
 		group, err := user.LookupGroupId(fmt.Sprint(stat.Gid))
 		if err == nil {
-			ls.username = group.Name
+			ls.groupname = group.Name
 		}
 		stats = append(stats, ls)
 
